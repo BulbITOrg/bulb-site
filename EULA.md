@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 ## Bulb for JIRA EULA v1.0
 
 This End-User License Agreement (“EULA”) is a legal agreement between you (either an individual or a single legal entity) whose details are provided to bulbit.org upon Purchase (defined below) (“Licensee”) and bulbit.org to use the Software. This EULA applies from the date when the Licensee receives the Software from a Reseller or bulbit.org (“Purchase”). An amendment or addendum to this EULA may accompany the Software. The Licensee agrees to be bound by the terms of this EULA by installing, copying, downloading or otherwise using the Software or clicking the “I Accept/ Agree” button if Purchasing the Software on-line. If the Licensee does not agree to the terms of this EULA, the Licensee may not install, copy, download or otherwise use the Software or if acquiring the Software on-line the Licensee must click the “Cancel” button. The Licensee cannot cancel its Purchase after it has started installing, copying, downloading or otherwise using the Software or clicked the “I Accept/Agree” button if Purchasing the Software on-line.

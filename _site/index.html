@@ -12,10 +12,10 @@
 ">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
 
     <!-- Freelancer Theme CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css" />
 
     <link rel="canonical" href="http://localhost:4000/">
 
@@ -38,7 +38,7 @@
   <body id="page-top" class="index">
 
     <!-- Navigation -->
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom" style="position: ;">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -55,6 +55,12 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
                     <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">About</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#gallery">Gallery</a>
                 </li>
                 <li class="page-scroll">
                     <a href="/documentation">Documentation</a>
@@ -84,7 +90,7 @@
     </div>
 </header>
 
-
+    
     <!-- Portfolio Grid Section -->
     <section id="about">
         <div class="container">
@@ -95,11 +101,59 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-lg-2"></div>
                 <div class="col-lg-4 ml-auto">
                     <p>Bulb for JIRA is a JIRA plugin displaying list of automated tests along with JIRA issues they are referenced to.</p>
                 </div>
                 <div class="col-lg-4 mr-auto">
                     <p>Together with plugins for build tools exporting test reports compatible with the plugin it gives a nice way how to make your automated testing transparent to every team member.</p>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+    </section>
+
+	<!-- Portfolio Grid Section -->
+    <section id="gallery" class="success">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Gallery</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 card">
+                    <div class="d-block mb-4 h-100 card-image">
+                        <a href="/img/gallery/projectTestsList.png">
+                            <img class="img-fluid img-thumbnail" src="/img/gallery/projectTestsList.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <p class="card-text">List of automated tests for a project</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 card">
+                    <div class="d-block mb-4 h-100 card-image">
+                        <a href="/img/gallery/issueTestsList.png">
+                            <img class="img-fluid img-thumbnail" src="/img/gallery/issueTestsList.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <p class="card-text">List of tests associated to an issue</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 card">
+                    <div class="d-block mb-4 h-100 card-image">
+                        <a href="/img/gallery/individualTestView.png">
+                            <img class="img-fluid img-thumbnail" src="/img/gallery/individualTestView.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <p class="card-text">Individual test view</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 card">
+                    <div class="d-block mb-4 h-100 card-image">
+                        <a href="/img/gallery/importRest.png">
+                            <img class="img-fluid img-thumbnail" src="/img/gallery/importRest.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <p class="card-text">REST method to import your test report</p>
                 </div>
             </div>
         </div>
@@ -112,26 +166,14 @@
             <div class="row">
                 <div class="footer-col col-md-4">
                     <h3>Location</h3>
-                    <p>3034 Melrose Place
-                        <br>Beverly Hills, CA 90201</p>
+                    <p>
+                        <br>,  </p>
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>Around the Web</h3>
                     <ul class="list-inline">
                         
-                        <li>
-                            <a href="https://www.facebook.com/StartBootstrap" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                        </li>
                         
-                        
-                        <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                        </li>
-                        
-                        
-                        <li>
-                            <a href="https://github.com/BlackrockDigital" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
-                        </li>
                         
                         
                         
@@ -166,9 +208,9 @@
 
 
     <!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/javascript/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <!-- Custom Theme JavaScript -->

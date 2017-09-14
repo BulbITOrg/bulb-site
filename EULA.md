@@ -1,5 +1,7 @@
 ---
 layout: post
+title: Bulb for JIRA EULA
+navbar_position: relative
 ---
 
 ## Bulb for JIRA EULA v1.0

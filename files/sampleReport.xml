@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+    <test>
+        <key>org.bulbit.jira.TestImportOneTest</key>
+        <description>Tests import functionality with just one test in file.</description>
+        <tickets>
+            <ticket>BTP-1</ticket>
+        </tickets>
+        <suites>
+            <suite>Import</suite>
+        </suites>
+    </test>
+    <test>
+        <key>org.bulbit.jira.TestImportStandaloneTests</key>
+        <description>Tests import functionality for standalone tests.</description>
+        <tickets>
+            <ticket>BTP-1</ticket>
+            <ticket>BTP-2</ticket>
+        </tickets>
+        <suites>
+            <suite>Import</suite>
+        </suites>
+    </test>
+    <test>
+        <key>org.bulbit.jira.TestIndividualTestView</key>
+        <description><![CDATA[
+	Tests individual test view. Checks following things:
+	<ul>
+		<li>Test header</li>
+		<li>Test description</li>
+		<li>Ticket assignations</li>
+	</ul>
+]]>
+        </description>
+        <tickets>
+            <ticket>BTP-3</ticket>
+        </tickets>
+        <suites>
+            <suite>Frontend</suite>
+        </suites>
+    </test>
+    <test>
+        <key>org.bulbit.jira.TestTestcasesList</key>
+        <description>Tests output of testcases list.</description>
+        <tickets>
+        </tickets>
+        <suites>
+            <suite>Frontend</suite>
+            <suite>Import</suite>
+        </suites>
+    </test>
+    <test>
+        <key>org.bulbit.jira.TestWithoutSuites</key>
+        <description>Tests output of testcases list.</description>
+        <tickets>
+            <ticket>BTP-3</ticket>
+        </tickets>
+        <suites>
+        </suites>
+    </test>
+</tests>

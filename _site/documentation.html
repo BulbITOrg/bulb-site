@@ -12,10 +12,10 @@
 ">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
 
     <!-- Freelancer Theme CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css" />
 
     <link rel="canonical" href="http://localhost:4000/documentation.html">
 
@@ -38,7 +38,7 @@
   <body id="page-top" class="index">
 
     <!-- Navigation -->
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom navbar-post" style="position: ;">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -48,15 +48,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Bulb for JIRA</a>
+            <a class="navbar-brand" href="/#page-top">Bulb for JIRA</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
-                    <a href="#page-top"></a>
+                    <a href="/#page-top"></a>
                 </li>
                 <li class="page-scroll">
+                    <a href="/#about">About</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="/#gallery">Gallery</a>
+                </li>
+                <li class="page-scroll active">
                     <a href="/documentation">Documentation</a>
                 </li>
             </ul>
@@ -67,43 +73,90 @@
 </nav>
 
 
-    <!-- Header -->
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="circle"></div>
-                <div class="intro-text">
-                    <span class="name">Bulb for JIRA</span>
-                    <hr class="star-light">
-                    <span class="skills">A simple way to bring more transparency on your test automation.
-</span>
-                </div>
-            </div>
-        </div>
+    <div class="container content">
+    	<h3 id="introduction">Introduction</h3>
+
+<p>Bulb for JIRA is a <a href="https://www.atlassian.com/software/jira" target="blank">JIRA</a> plugin what displays information about your automated tests along with your JIRA issues. It makes test automation coverage transparent even to non-technical team members.</p>
+
+<h3 id="plugin-rest-services">Plugin REST services</h3>
+
+<h4 id="data-import-rest-service">Data import REST service</h4>
+
+<p>Details to use the REST service:</p>
+<ul>
+  <li>Service method URL: ${JIRA_ROOT}/rest/tests/1.0/import?projectKey=${PROJECT_KEY}&amp;tag=${REPORT_TAG}</li>
+  <li>Service parameters:
+    <ul>
+      <li>projectKey - key of the JIRA project to what the test report belongs.</li>
+      <li>projectTag - identifier ot the test report in free form. On each import all the tests for given tag are cleared and re-imported. Therefore this is useful for projects where there are multiple categories of tests (for example unit tests and integration tests) what can’t be exported in same report.</li>
+    </ul>
+  </li>
+  <li>Currently service supports only report in XML. See XSD definition of the format <a href="/files/testReportSchema.xsd">here</a>. See sample test report <a href="/files/sampleReport.xml">here</a>. If you use maven, you can use bulb maven plugin what will prepare test report in this format on build.</li>
+  <li>Report should be posted in the HTTP request body.</li>
+</ul>
+
+<h4 id="list-tests-rest-service-method">List tests REST service method</h4>
+
+<p>Details to use REST service:</p>
+<ul>
+  <li>Service method URL: ${JIRA_ROOT}/rest/tests/1.0/fetchTestsForProject?projectKey=${PROJECT_KEY}</li>
+  <li>Service have only one parameter - projectKey.</li>
+</ul>
+
+<p><strong>NOTE:</strong> JIRA secures REST service methods with basic authentication - make sure you pass JIRA credentials of user with appropriate rights.</p>
+
+<h3 id="setup-using-maven">Setup using Maven</h3>
+
+<h4 id="add-bulb-maven-plugin-to-your-project">Add bulb maven plugin to your project</h4>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;build&gt;</span>
+    <span class="nt">&lt;plugins&gt;</span>
+        ...
+        <span class="nt">&lt;plugin&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.bulbit.maven<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>bulb-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;configuration&gt;</span>
+            <span class="nt">&lt;/configuration&gt;</span>
+            <span class="nt">&lt;executions&gt;</span>
+                <span class="nt">&lt;execution&gt;</span>
+                    <span class="nt">&lt;phase&gt;</span>test<span class="nt">&lt;/phase&gt;</span>
+                    <span class="nt">&lt;goals&gt;</span>
+                        <span class="nt">&lt;goal&gt;</span>testreport<span class="nt">&lt;/goal&gt;</span>
+                    <span class="nt">&lt;/goals&gt;</span>
+                <span class="nt">&lt;/execution&gt;</span>
+            <span class="nt">&lt;/executions&gt;</span>
+        <span class="nt">&lt;/plugin&gt;</span>
+        ...
+    <span class="nt">&lt;/plugins&gt;</span>
+<span class="nt">&lt;/build&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="document-relation-between-issues-and-tests">Document relation between issues and tests</h4>
+
+<p>Start first line of test comment with prefix “Tickets: “, finish it with comma separated list of tickets to what test relates.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="cm">/**
+ * Tickets: ZSA-4, ZSA-1
+ * Create claim
+ * Go to claim detail page
+ * Upload claim document to it
+ * Check that email has been sent to the customer
+ * @see Something
+ */</span>
+<span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testUpload</span><span class="o">()</span> <span class="o">{</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h4 id="run-maven-build">Run maven build</h4>
+
+<p>On next run of <code class="highlighter-rouge">mvn clean install</code> maven plugin will export rests report to file trackerTestReport.xml under the target directory.</p>
+
+
     </div>
-</header>
-
-
-    <!-- Portfolio Grid Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 ml-auto">
-                    <p>Bulb for JIRA is a JIRA plugin displaying list of automated tests along with JIRA issues they are referenced to.</p>
-                </div>
-                <div class="col-lg-4 mr-auto">
-                    <p>Together with plugins for build tools exporting test reports compatible with the plugin it gives a nice way how to make your automated testing transparent to every team member.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
 <footer class="text-center">
@@ -112,26 +165,14 @@
             <div class="row">
                 <div class="footer-col col-md-4">
                     <h3>Location</h3>
-                    <p>3034 Melrose Place
-                        <br>Beverly Hills, CA 90201</p>
+                    <p>
+                        <br>,  </p>
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>Around the Web</h3>
                     <ul class="list-inline">
                         
-                        <li>
-                            <a href="https://www.facebook.com/StartBootstrap" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                        </li>
                         
-                        
-                        <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                        </li>
-                        
-                        
-                        <li>
-                            <a href="https://github.com/BlackrockDigital" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
-                        </li>
                         
                         
                         
@@ -166,9 +207,9 @@
 
 
     <!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/javascript/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <!-- Custom Theme JavaScript -->

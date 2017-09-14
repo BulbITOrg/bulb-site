@@ -524,3 +524,54 @@ fieldset[disabled] .btn-success.active {
 .mr-auto {
   margin-right: auto!important;
 }
+
+.img-thumbnail {
+  padding: .25rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: .25rem;
+  transition: all .2s ease-in-out;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-image {
+  overflow: hidden;
+}
+
+.card-text {
+  text-align: center;
+  margin: 15px 0px;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .card-image {
+    height: 135px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .card-image {
+    height: 200px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .card-image {
+    height: 270px;
+  }
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+.navbar-post {
+  position: inherit;
+}

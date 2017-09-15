@@ -4,7 +4,7 @@ layout: post
 
 ### Introduction
 
-Bulb for JIRA is a <a href="https://www.atlassian.com/software/jira" target="blank">JIRA</a> plugin what displays information about your automated tests along with your JIRA issues. It makes test automation coverage transparent even to non-technical team members.
+Bulb for JIRA is a <a href="https://www.atlassian.com/software/jira" target="blank">JIRA</a> plugin which displays information about your automated tests along with your JIRA issues. It makes test automation coverage transparent even to non-technical team members.
 
 ### Plugin REST services
 

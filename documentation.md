@@ -37,7 +37,7 @@ Details to use REST service:
         <plugin>
             <groupId>org.bulbit.maven</groupId>
             <artifactId>bulb-maven-plugin</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
             <configuration>
             </configuration>
             <executions>

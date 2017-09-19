@@ -17,7 +17,7 @@
     <!-- Freelancer Theme CSS -->
     <link rel="stylesheet" href="/css/main.css" />
 
-    <link rel="canonical" href="http://localhost:4000/documentation.html">
+    <link rel="canonical" href="http://localhost:4000/sla.html">
 
     <link rel="alternate" type="application/rss+xml" title="Bulb for JIRA" href="http://localhost:4000 /feed.xml ">
 
@@ -74,87 +74,31 @@
 
 
     <div class="container content">
-    	<h3 id="introduction">Introduction</h3>
+    	<h2 id="bulbitorg-support-service-level-agreement">bulbit.org Support Service Level Agreement</h2>
 
-<p>Bulb for JIRA is a <a href="https://www.atlassian.com/software/jira" target="blank">JIRA</a> plugin which displays information about your automated tests along with your JIRA issues. It makes test automation coverage transparent even to non-technical team members.</p>
+<h3 id="response-times">Response Times</h3>
+<p>We will respond to your support requests within 40 business hours from the time of your request. We will do our best to get back to you sooner as well as we often check for critical support requests outside normal business hours.</p>
 
-<h3 id="plugin-rest-services">Plugin REST services</h3>
+<h3 id="business-hours">Business Hours</h3>
+<p>Our business hours are Monday through Friday, 9AM – 6PM Eastern European Time (EET). We are closed on national Latvian holidays.</p>
 
-<h4 id="data-import-rest-service">Data import REST service</h4>
+<h3 id="support-channels">Support Channels</h3>
+<p>Submit a request through our contact page or send email to bulbhelpdesk@gmail.com.</p>
 
-<p>Details to use the REST service:</p>
+<h3 id="support-includes">Support includes:</h3>
 <ul>
-  <li>Service method URL: ${JIRA_ROOT}/rest/tests/1.0/import?projectKey=${PROJECT_KEY}&amp;tag=${REPORT_TAG}</li>
-  <li>Service parameters:
-    <ul>
-      <li>projectKey - key of the JIRA project to what the test report belongs.</li>
-      <li>projectTag - identifier ot the test report in free form. On each import all the tests for given tag are cleared and re-imported. Therefore this is useful for projects where there are multiple categories of tests (for example unit tests and integration tests) what can’t be exported in same report.</li>
-    </ul>
-  </li>
-  <li>Currently service supports only report in XML. See XSD definition of the format <a href="/files/testReportSchema.xsd">here</a>. See sample test report <a href="/files/sampleReport.xml">here</a>. If you use maven, you can use bulb maven plugin what will prepare test report in this format on build.</li>
-  <li>Report should be posted in the HTTP request body.</li>
+  <li>Help with installation and upgrades.</li>
+  <li>Help troubleshooting problems with Bulb for JIRA.</li>
+  <li>Help identifying work-arounds.</li>
 </ul>
 
-<h4 id="list-tests-rest-service-method">List tests REST service method</h4>
-
-<p>Details to use REST service:</p>
+<h3 id="support-does-not-include">Support does not include:</h3>
 <ul>
-  <li>Service method URL: ${JIRA_ROOT}/rest/tests/1.0/fetchTestsForProject?projectKey=${PROJECT_KEY}</li>
-  <li>Service have only one parameter - projectKey.</li>
+  <li>Product Training.</li>
+  <li>Customers who do not have a valid and current license or active subscription.</li>
+  <li>Support for other applications (e.g. JIRA).</li>
+  <li>Support in any language other than English or Latvian.</li>
 </ul>
-
-<p><strong>NOTE:</strong> JIRA secures REST service methods with basic authentication - make sure you pass JIRA credentials of user with appropriate rights.</p>
-
-<h3 id="setup-using-maven">Setup using Maven</h3>
-
-<h4 id="add-bulb-maven-plugin-to-your-project">Add bulb maven plugin to your project</h4>
-
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;build&gt;</span>
-    <span class="nt">&lt;plugins&gt;</span>
-        ...
-        <span class="nt">&lt;plugin&gt;</span>
-            <span class="nt">&lt;groupId&gt;</span>org.bulbit.maven<span class="nt">&lt;/groupId&gt;</span>
-            <span class="nt">&lt;artifactId&gt;</span>bulb-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-            <span class="nt">&lt;version&gt;</span>1.0.1<span class="nt">&lt;/version&gt;</span>
-            <span class="nt">&lt;configuration&gt;</span>
-            <span class="nt">&lt;/configuration&gt;</span>
-            <span class="nt">&lt;executions&gt;</span>
-                <span class="nt">&lt;execution&gt;</span>
-                    <span class="nt">&lt;phase&gt;</span>test<span class="nt">&lt;/phase&gt;</span>
-                    <span class="nt">&lt;goals&gt;</span>
-                        <span class="nt">&lt;goal&gt;</span>testreport<span class="nt">&lt;/goal&gt;</span>
-                    <span class="nt">&lt;/goals&gt;</span>
-                <span class="nt">&lt;/execution&gt;</span>
-            <span class="nt">&lt;/executions&gt;</span>
-        <span class="nt">&lt;/plugin&gt;</span>
-        ...
-    <span class="nt">&lt;/plugins&gt;</span>
-<span class="nt">&lt;/build&gt;</span>
-</code></pre>
-</div>
-
-<h4 id="document-relation-between-issues-and-tests">Document relation between issues and tests</h4>
-
-<p>Start first line of test comment with prefix “Tickets: “, finish it with comma separated list of tickets to what test relates.</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="cm">/**
- * Tickets: ZSA-4, ZSA-1
- * Create claim
- * Go to claim detail page
- * Upload claim document to it
- * Check that email has been sent to the customer
- * @see Something
- */</span>
-<span class="nd">@Test</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testUpload</span><span class="o">()</span> <span class="o">{</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<h4 id="run-maven-build">Run maven build</h4>
-
-<p>On next run of <code class="highlighter-rouge">mvn clean install</code> maven plugin will export rests report to file trackerTestReport.xml under the target directory.</p>
-
 
     </div>
 

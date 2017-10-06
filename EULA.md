@@ -217,7 +217,7 @@ A waiver by bulbit.org of any default shall not constitute a waiver of any subse
 22.3
 No waiver by bulbit.org of any of these terms and conditions shall be effective unless it is expressly stated to be a waiver and is communicated to the Licensee in writing.
 
-23. Severability
+## 23. Severability
 23.1
 If any provision of the EULA (or part of a provision) is found by any court or administrative body of competent jurisdiction to be invalid, unenforceable or illegal, the other provisions shall remain in force.
 

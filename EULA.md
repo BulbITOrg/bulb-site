@@ -172,7 +172,7 @@ Notwithstanding anything else in this section 14, to the maximum extent permitte
 
 (h) any operator error on the part of the Licensee.
 
-15. Publicity Rights
+## 15. Publicity Rights
 Licensee grants bulbit.org the right to include Licensee as a customer in Software promotional material, including Licensee’s logo. Licensee can deny bulbit.org this right at any time by submitting a written request via email to bulbhelpdesk@gmail.com, requesting to be excluded from Software promotional material. Requests made after Purchase may take thirty (30) calendar days to process.
 
 ## 16. Amendment

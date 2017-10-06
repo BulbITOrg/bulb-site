@@ -11,7 +11,7 @@ We will respond to your support requests within 40 business hours from the time 
 Our business hours are Monday through Friday, 9AM – 6PM Eastern European Time (EET). We are closed on national Latvian holidays.
 
 ### Support Channels
-Submit a request through our contact page or send email to bulbhelpdesk@gmail.com.
+Submit a request through our <a href="https://bulbit.atlassian.net/servicedesk/customer/portal/1">support portal</a> or send email to support@bulbit.atlassian.net.
 
 ### Support includes:
 * Help with installation and upgrades.

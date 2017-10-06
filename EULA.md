@@ -173,7 +173,7 @@ Notwithstanding anything else in this section 14, to the maximum extent permitte
 (h) any operator error on the part of the Licensee.
 
 15. Publicity Rights
-Licensee grants bulbit.org the right to include Licensee as a customer in Software promotional material, including Licensee’s logo. Licensee can deny bulbit.org this right at any time by submitting a written request via email to support@bulbit.atlassian.net, requesting to be excluded from Software promotional material. Requests made after Purchase may take thirty (30) calendar days to process.
+Licensee grants bulbit.org the right to include Licensee as a customer in Software promotional material, including Licensee’s logo. Licensee can deny bulbit.org this right at any time by submitting a written request via email to bulbhelpdesk@gmail.com, requesting to be excluded from Software promotional material. Requests made after Purchase may take thirty (30) calendar days to process.
 
 ## 16. Amendment
 This EULA may not be amended except with the written agreement of bulbit.org whose consent may be withheld in its complete discretion without any requirement to provide reasons.
@@ -205,7 +205,7 @@ Each party agrees that the only rights and remedies available to it arising out 
 Nothing in this clause shall limit or exclude any liability for fraud.
 
 ## 21. Notices
-All notices given to bulbit.org must be sent to support@bulbit.atlassian.net, if by electronic communication, or Bikernieku iela 160, Riga, LV 1078, Latvia, if by mail, and to the Licensee at the address provided by it upon Purchase of the Software. Notice will be deemed received and properly served 24 hours after an electronic communication (including email) is sent, or three days after the date of posting of any letter. In proving the service of any notice, it will be sufficient to prove, in the case of a letter, that such letter was properly addressed, stamped and placed in the post and, in the case of an electronic communication, that such e-mail was sent to the specified e-mail address of the addressee.
+All notices given to bulbit.org must be sent to bulbhelpdesk@gmail.com, if by electronic communication, or Bikernieku iela 160, Riga, LV 1078, Latvia, if by mail, and to the Licensee at the address provided by it upon Purchase of the Software. Notice will be deemed received and properly served 24 hours after an electronic communication (including email) is sent, or three days after the date of posting of any letter. In proving the service of any notice, it will be sufficient to prove, in the case of a letter, that such letter was properly addressed, stamped and placed in the post and, in the case of an electronic communication, that such e-mail was sent to the specified e-mail address of the addressee.
 
 ## 22. Waiver
 22.1
